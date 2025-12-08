@@ -27,7 +27,7 @@ source:
 # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string
 # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#preprocessing-selectors
 build:  
-  number: 1
+  number: 2
   # string: abc_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
   skip: true  # [py<38]
   # skip: true  # [python_impl == "pypy"]  
@@ -52,6 +52,7 @@ requirements:
     - clang                                  # [win]
     - llvm-openmp                            # [osx]
     - libgomp                                # [linux]
+    - gfortran                               # [linux or osx]
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
